@@ -44,7 +44,7 @@
     },
     {
       "name": "The Elder Scrolls V: Skyrim",
-      "description": "",
+      "description": "The Elder Scrolls V: Skyrim is an open-world action role-playing game set in a vast and immersive fantasy world. Players assume the role of the Dragonborn, a prophesied hero, and embark on an epic journey filled with exploration, quests, combat, and the ability to shape their character's destiny through various choices and abilities like magic, combat skills, and character development.",
       "genre-0": "Open-World",
       "genre-1": "Exploration",
       "genre-2": "RPG(Role-Playing Game)",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Counter-Strike 2",
-      "description": "",
+      "description": "Counter-Strike: Global Offensive (CS:GO) is a popular team-based first-person shooter where players join either terrorist or counter-terrorist teams, engaging in objective-based matches involving tasks like planting/defusing bombs or rescuing/capturing hostages. The game emphasizes tactical gameplay, teamwork, weapon strategy, and precise aiming skills across various maps and game modes.",
       "genre-0": "FPS(First Person Shooter)",
       "genre-1": "Multiplayer",
       "genre-2": "Strategy",
@@ -74,7 +74,7 @@
     },
     {
       "name": "Grand Theft Auto V",
-      "description" :"",
+      "description" :"Grand Theft Auto V (GTA V) is an action-adventure game set in the fictional state of San Andreas, following the lives of three criminals as they execute heists and navigate a sprawling open-world environment filled with missions, activities, and diverse gameplay experiences.",
       "genre-0": "Open-World",
       "genre-1": "Action",
       "genre-2": "Multiplayer",
@@ -87,7 +87,7 @@
     },
     {
       "name": "Rocket League",
-      "description": "",
+      "description": "Rocket League is a fast-paced sports game that combines soccer with rocket-powered cars. Players control cars, attempting to score goals by hitting a giant ball into the opposing team's net while performing acrobatic maneuvers and utilizing boosts for speed and agility.",
       "genre-0": "Sports",
       "genre-1": "Action",
       "genre-2": "Multiplayer",
@@ -102,7 +102,7 @@
     },
     {
       "name": "Among Us",
-      "description": "",
+      "description": "Among Us is a multiplayer social deduction game where players work together on a spaceship, completing tasks while attempting to identify impostors among them through discussion, deception, and strategic voting.",
       "genre-0": "Survival",
       "genre-1": "Multiplayer",
       "genre-2": "Party",
@@ -117,7 +117,7 @@
     },
     {
       "name": "Stardew Valley",
-      "description": "",
+      "description": "Stardew Valley is a farming simulation game where players inherit and cultivate a farm, interact with villagers, explore caves, fish, mine, and build relationships while managing their time and resources.",
       "genre-0": "Simulation",
       "genre-1": "RPG(Role-Playing Game)",
       "genre-2": "Adventure",
@@ -134,7 +134,7 @@
     },
     {
       "name": "Fortnite",
-      "description": "",
+      "description": "Fortnite is a popular battle royale game where players fight to be the last one standing in a constantly shrinking arena, building structures and using various weapons and tactics to outlast opponents.",
       "genre-0": "Battle-Royale",
       "genre-1": "Action",
       "genre-2": "Multiplayer",
@@ -151,7 +151,7 @@
     },
     {
       "name": "Dota 2",
-      "description": "",
+      "description": "Dota 2 is a multiplayer online battle arena (MOBA) game where two teams of five players select unique heroes with distinct abilities, working together to destroy the enemy's Ancient while strategizing, farming resources, and engaging in team fights.",
       "genre-0": "MOBA(Multiplayer Online Battle Arena)",
       "genre-1": "Strategy",
       "genre-2": "Co-op",
@@ -164,7 +164,7 @@
     },
     {
       "name": "Call of Duty: Modern Warfare 3 (2023)",
-      "description": "",
+      "description": " Modern Warfare 3 is a first-person shooter game set in a modern-day conflict, offering a single-player campaign mode as well as multiplayer modes featuring fast-paced combat and various customization options.",
       "genre-0": "FPS(First Person Shooter)",
       "genre-1": "Shooter",
       "genre-2": "Multiplayer",
@@ -175,6 +175,56 @@
       "platform-1": "Xbox",
       "platform-2": "PlayStation",
       "id": 10
+    },
+    {
+      "name": "Baldur's Gate 3",
+      "description": "Baldur's Gate 3 is a role-playing game set in the Dungeons & Dragons universe, featuring a rich narrative, character customization, party-based adventuring, and turn-based combat in a detailed fantasy world.",
+      "genre-0": "RPG(Role-Playing Game)",
+      "genre-1": "Adventure",
+      "genre-2": "Strategy",
+      "image": "https://preview.redd.it/new-game-cover-from-larians-website-v0-m2lmw222h0ka1.png?auto=webp&s=ba904ad42906960a96a70ce1c27ee6d3ff5edead",
+      "developer": "Larian Studios",
+      "platform-0": "PC",
+      "platform-1": "Xbox",
+      "platform-2": "PlayStation",
+      "id": 11
+    },
+    {
+      "name": "Overwatch 2",
+      "description": " Overwatch 2 is a team-based multiplayer first-person shooter with cooperative and competitive gameplay, focusing on hero-based combat, objective-based missions, and various game modes while expanding the lore of the Overwatch universe.",
+      "genre-0": "FPS(First Person Shooter)",
+      "genre-1": "Shooter",
+      "genre-2": "Multiplayer",
+      "genre-3": "Action",
+      "image": "https://thumbnails.pcgamingwiki.com/3/3b/Overwatch_2_cover.jpg/300px-Overwatch_2_cover.jpg",
+      "developer": "Blizzard Entertainment",
+      "platform-0": "PC",
+      "platform-1": "Xbox",
+      "platform-2": "PlayStation",
+      "platform-3": "Switch",
+      "id": 12
+    },
+    {
+      "name": "Hearthstone",
+      "description": "Hearthstone is a digital collectible card game where players build decks and engage in strategic card-based battles using heroes from the Warcraft universe, aiming to outsmart opponents through tactical card play.",
+      "genre-0": "Card",
+      "genre-1": "Strategy",
+      "image": "https://e.snmc.io/lk/l/x/b7a6d2900c623d1b39a9fdc67aba5303/5288880",
+      "developer": "Blizzard Entertainment",
+      "platform-0": "PC",
+      "platform-1": "Mobile",
+      "id": 13
+    },
+    {
+      "name": "Magic: The Gathering Arena",
+      "description": "Magic: The Gathering is a collectible card game where players build decks using various spells, creatures, and artifacts to engage in strategic duels, casting spells and summoning creatures to defeat opponents by reducing their life total to zero.",
+      "genre-0": "Card",
+      "genre-1": "Strategy",
+      "genre-2": "Fantasy",
+      "image": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d00c6ccf7093bca0fbeb161823f193b6.png",
+      "developer": "Wizards of the Coast LLC",
+      "platform-0": "PC",
+      "platform-1": "Mobile"
     }
   ]
 }
