@@ -24,6 +24,14 @@ export const CreateUser = () => {
             onChange: (e) => setUsernameInput(e.target.value),
           }}
         />
+        <FormInputContainer
+          label="password"
+          inputProps={{
+            value: passwordInput === null ? "" : passwordInput,
+            onChange: (e) => setPasswordInput(e.target.value),
+          }}
+        />
+        <button type="submit">Create Account</button>
       </form>
     </div>
   );
