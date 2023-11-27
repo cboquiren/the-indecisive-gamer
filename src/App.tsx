@@ -6,13 +6,13 @@ import { UserProvider } from "./Providers/UserProvider";
 function App() {
   return (
     <>
-      <GamesProvider>
-        <UserProvider>
-          <InteractionProvider>
+      <UserProvider>
+        <InteractionProvider>
+          <GamesProvider>
             <Navbar></Navbar>
-          </InteractionProvider>
-        </UserProvider>
-      </GamesProvider>
+          </GamesProvider>
+        </InteractionProvider>
+      </UserProvider>
     </>
   );
 }

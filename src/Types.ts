@@ -6,6 +6,7 @@ export type TGame = {
   "genre-2"?: string,
   "genre-3"?: string,
   "genre-4"?: string,
+  'allGenres': string[],
   image: string,
   developer: string,
   "platform-0": string,
@@ -13,6 +14,7 @@ export type TGame = {
   "platform-2"?: string,
   "platform-3"?: string,
   "platform-4"?: string,
+  'allPlatforms': string[],
   id: number
 }
 
@@ -43,7 +45,7 @@ type TOwned = {
   gameId: number,
   type: "owned",
   id: number,
-  hasPlayed: boolean
+  isOwned: boolean
 }
 
 type THidden = {
@@ -56,3 +58,12 @@ type THidden = {
 
 
 export type TInteraction = TFavorite | TPlayed | TOwned | THidden;
+
+export type TIBooleans = {
+  isFavorite?: boolean,
+  hasPlayed?: boolean,
+  isOwned?: boolean,
+  isHidden?: boolean
+}
+
+export type TITypes = 'favorite' | 'played' | 'owned' | 'hidden';

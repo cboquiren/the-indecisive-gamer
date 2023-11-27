@@ -9,6 +9,11 @@
       "username": "test",
       "password": "Test",
       "id": 2
+    },
+    {
+      "username": "arj",
+      "password": "goob",
+      "id": 3
     }
   ],
   "games": [
@@ -74,7 +79,7 @@
     },
     {
       "name": "Grand Theft Auto V",
-      "description" :"Grand Theft Auto V (GTA V) is an action-adventure game set in the fictional state of San Andreas, following the lives of three criminals as they execute heists and navigate a sprawling open-world environment filled with missions, activities, and diverse gameplay experiences.",
+      "description": "Grand Theft Auto V (GTA V) is an action-adventure game set in the fictional state of San Andreas, following the lives of three criminals as they execute heists and navigate a sprawling open-world environment filled with missions, activities, and diverse gameplay experiences.",
       "genre-0": "Open-World",
       "genre-1": "Action",
       "genre-2": "Multiplayer",
@@ -123,7 +128,7 @@
       "genre-2": "Adventure",
       "genre-3": "Strategy",
       "genre-4": "Action",
-      "image" : "https://howlongtobeat.com/games/34716_Stardew_Valley.jpg",
+      "image": "https://howlongtobeat.com/games/34716_Stardew_Valley.jpg",
       "developer": "ConcernedApe",
       "platform-0": "PC",
       "platform-1": "Mobile",
@@ -159,7 +164,7 @@
       "genre-4": "Action",
       "image": "https://thumbnails.pcgamingwiki.com/d/db/Dota_2_cover.jpg/300px-Dota_2_cover.jpg",
       "developer": "Valve Corporation",
-      "platform-0":"PC",
+      "platform-0": "PC",
       "id": 9
     },
     {
@@ -225,6 +230,36 @@
       "developer": "Wizards of the Coast LLC",
       "platform-0": "PC",
       "platform-1": "Mobile"
+    }
+  ],
+  "interactions": [
+    {
+      "type": "favorite",
+      "userId": 0,
+      "gameId": 2,
+      "isFavorite": true,
+      "id": 0
+    },
+    {
+      "type": "played",
+      "userId": 0,
+      "gameId": 2,
+      "hasPlayed": true,
+      "id": 1
+    },
+    {
+      "type": "owned",
+      "userId": 0,
+      "gameId": 2,
+      "isOwned": true,
+      "id": 2
+    },
+    {
+      "type": "hidden",
+      "userId": 0,
+      "gameId": 8,
+      "isHidden": true,
+      "id": 3
     }
   ]
 }

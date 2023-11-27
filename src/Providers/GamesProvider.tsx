@@ -1,21 +1,72 @@
-import { TGame } from "../Types";
-import { Dispatch, ReactNode, SetStateAction, createContext, useContext, useState } from "react";
+import { TGame, TITypes } from "../Types";
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
+import { useUser } from "./UserProvider";
+import { useInteractions } from "./InteractionsProvider";
+import { gamesRequests } from "../apiRequests/GamesApi";
 
 type TGamesContext = {
-  allGames: TGame[];
-  setAllGames: Dispatch<SetStateAction<TGame[]>>;
+  allGamesRaw: Omit<TGame, "allGenres" | "allPlatforms">[];
+  setAllGamesRaw: Dispatch<SetStateAction<Omit<TGame, "allGenres" | "allPlatforms">[]>>;
   selectedGame: TGame;
   setSelectedGame: Dispatch<SetStateAction<TGame>>;
+  allGames: TGame[];
 };
 
 const GamesContext = createContext<TGamesContext | undefined>(undefined);
 
 export const GamesProvider = ({ children }: { children: ReactNode }) => {
-  const [allGames, setAllGames] = useState<TGame[]>([]);
+  const [allGamesRaw, setAllGamesRaw] = useState<Omit<TGame, "allGenres" | "allPlatforms">[]>([]);
   const [selectedGame, setSelectedGame] = useState<TGame>({} as TGame);
 
+  const { user } = useUser();
+  const { userInteractions } = useInteractions();
+
+  const allGames = allGamesRaw.map((game) => {
+    const allGenres: string[] = [];
+    const allPlatforms: string[] = [];
+    for (let i = 0; i < 5; i++) {
+      const genre = `genre-${i}` as keyof Omit<TGame, "allGenres" | "allPlatforms">;
+      if (genre in game) {
+        allGenres.push(game[genre]);
+      }
+    }
+    return { ...game, allGenres: allGenres, allPlatforms: allPlatforms };
+  });
+
+  const getAllGames = () => {
+    return gamesRequests.getAllGames().then(setAllGamesRaw);
+  };
+
+  useEffect(() => {
+    getAllGames();
+  }, []);
+
+  const sortUserGamesByType = (type: TITypes) => {
+    if (!user) {
+      return [];
+    }
+    return userInteractions
+      .filter((interaction) => interaction.type === type)
+      .map((interaction) => interaction.gameId);
+  };
+
+  // const hiddenGamesArr = sortUserGamesByType("hidden");
+  // const favoriteGamesArr = sortUserGamesByType("favorite");
+  // const ownedGamesArr = sortUserGamesByType("owned");
+  // const playedGamesArr = sortUserGamesByType("played");
+
   return (
-    <GamesContext.Provider value={{ allGames, setAllGames, selectedGame, setSelectedGame }}>
+    <GamesContext.Provider
+      value={{ allGamesRaw, setAllGamesRaw, selectedGame, setSelectedGame, allGames }}
+    >
       {children}
     </GamesContext.Provider>
   );
@@ -26,4 +77,5 @@ export const useGames = () => {
   if (!context) {
     throw new Error("Please use 'useGames' hook within GamesContext");
   }
+  return context;
 };
