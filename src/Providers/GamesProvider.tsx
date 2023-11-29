@@ -13,17 +13,18 @@ import { useInteractions } from "./InteractionsProvider";
 import { gamesRequests } from "../apiRequests/GamesApi";
 
 type TGamesContext = {
-  allGamesRaw: Omit<TGame, "allGenres" | "allPlatforms">[];
-  setAllGamesRaw: Dispatch<SetStateAction<Omit<TGame, "allGenres" | "allPlatforms">[]>>;
+  allGamesRaw: TGame[];
+  setAllGamesRaw: Dispatch<SetStateAction<TGame[]>>;
   selectedGame: TGame;
   setSelectedGame: Dispatch<SetStateAction<TGame>>;
   allGames: TGame[];
+  userCategories: { [key: string]: number[] };
 };
 
 const GamesContext = createContext<TGamesContext | undefined>(undefined);
 
 export const GamesProvider = ({ children }: { children: ReactNode }) => {
-  const [allGamesRaw, setAllGamesRaw] = useState<Omit<TGame, "allGenres" | "allPlatforms">[]>([]);
+  const [allGamesRaw, setAllGamesRaw] = useState<TGame[]>([]);
   const [selectedGame, setSelectedGame] = useState<TGame>({} as TGame);
 
   const { user } = useUser();
@@ -33,9 +34,13 @@ export const GamesProvider = ({ children }: { children: ReactNode }) => {
     const allGenres: string[] = [];
     const allPlatforms: string[] = [];
     for (let i = 0; i < 5; i++) {
-      const genre = `genre-${i}` as keyof Omit<TGame, "allGenres" | "allPlatforms">;
+      const genre = `genre-${i}`;
       if (genre in game) {
         allGenres.push(game[genre]);
+      }
+      const platform: string = `platform-${i}`;
+      if (platform in game) {
+        allPlatforms.push(game[platform]);
       }
     }
     return { ...game, allGenres: allGenres, allPlatforms: allPlatforms };
@@ -58,14 +63,23 @@ export const GamesProvider = ({ children }: { children: ReactNode }) => {
       .map((interaction) => interaction.gameId);
   };
 
-  // const hiddenGamesArr = sortUserGamesByType("hidden");
-  // const favoriteGamesArr = sortUserGamesByType("favorite");
-  // const ownedGamesArr = sortUserGamesByType("owned");
-  // const playedGamesArr = sortUserGamesByType("played");
+  const userCategories = {
+    hiddenGamesArr: sortUserGamesByType("hidden"),
+    favoriteGamesArr: sortUserGamesByType("favorite"),
+    ownedGamesArr: sortUserGamesByType("owned"),
+    playedGamesArr: sortUserGamesByType("played"),
+  };
 
   return (
     <GamesContext.Provider
-      value={{ allGamesRaw, setAllGamesRaw, selectedGame, setSelectedGame, allGames }}
+      value={{
+        allGamesRaw,
+        setAllGamesRaw,
+        selectedGame,
+        setSelectedGame,
+        allGames,
+        userCategories,
+      }}
     >
       {children}
     </GamesContext.Provider>

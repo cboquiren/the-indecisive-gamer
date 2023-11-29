@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { TUser } from "../Types";
-import { FormInputContainer } from "./FormInput";
+import { FormInputContainer } from "./UserFormInput";
 import { useState } from "react";
 
 export const UserForm = ({

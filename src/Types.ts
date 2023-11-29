@@ -6,7 +6,7 @@ export type TGame = {
   "genre-2"?: string,
   "genre-3"?: string,
   "genre-4"?: string,
-  'allGenres': string[],
+  'allGenres'?: string[],
   image: string,
   developer: string,
   "platform-0": string,
@@ -14,7 +14,7 @@ export type TGame = {
   "platform-2"?: string,
   "platform-3"?: string,
   "platform-4"?: string,
-  'allPlatforms': string[],
+  'allPlatforms'?: string[],
   id: number
 }
 
