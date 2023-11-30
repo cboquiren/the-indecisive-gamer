@@ -13,6 +13,7 @@ export const GenreSelect = ({
     <div>
       <input
         type="checkbox"
+        key={genre}
         value={genre}
         checked={selectedGenres.includes(genre)}
         onChange={() => {

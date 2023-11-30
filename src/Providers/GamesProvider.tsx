@@ -33,12 +33,13 @@ export const GamesProvider = ({ children }: { children: ReactNode }) => {
   const allGames = allGamesRaw.map((game) => {
     const allGenres: string[] = [];
     const allPlatforms: string[] = [];
+
     for (let i = 0; i < 5; i++) {
-      const genre = `genre-${i}`;
+      const genre = `genre-${i}` as `genre-0`;
       if (genre in game) {
         allGenres.push(game[genre]);
       }
-      const platform: string = `platform-${i}`;
+      const platform = `platform-${i}` as `platform-0`;
       if (platform in game) {
         allPlatforms.push(game[platform]);
       }

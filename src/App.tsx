@@ -4,7 +4,7 @@ import { GamesProvider } from "./Providers/GamesProvider";
 import { InteractionProvider } from "./Providers/InteractionsProvider";
 import { UserProvider } from "./Providers/UserProvider";
 import { Homepage } from "./Pages/home";
-import { SuggestionPage } from "./Pages/search";
+import { SuggestionPage } from "./Pages/suggestion";
 import { Highlight } from "./Pages/highlight";
 import { Lobby } from "./Pages/lobby";
 
@@ -19,7 +19,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Homepage />}></Route>
                 <Route path="lobby" element={<Lobby />}></Route>
-                <Route path="search" element={<SuggestionPage />}></Route>
+                <Route path="suggestion" element={<SuggestionPage />}></Route>
                 <Route path="try-this" element={<Highlight />}></Route>
               </Routes>
             </div>

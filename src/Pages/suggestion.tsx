@@ -3,19 +3,19 @@ import { allDevelopers, allGenres } from "../all-data";
 import { GenreSelect } from "../Components/SPGenre";
 
 export const SuggestionPage = () => {
-  const [shouldShowAll, setShouldShowAll] = useState<boolean>(false);
+  const [shouldShowAllGenres, setShouldShowAllGenres] = useState<boolean>(false);
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
   const [selectedDev, setSelectedDev] = useState<string>("any");
   return (
     <div>
-      <h1>This is the search Page</h1>
-      <p>This has the search bar and results of search</p>
+      <h1>This is the suggestion Page</h1>
+      <p>This has the suggestion form</p>
 
       <form action="">
         <h2>What are you in the mood to play?</h2>
         <label htmlFor="">Genre Selection:</label>
         <div>
-          {!shouldShowAll &&
+          {!shouldShowAllGenres &&
             allGenres.slice(0, 5).map((genre) => {
               return (
                 <GenreSelect
@@ -25,7 +25,7 @@ export const SuggestionPage = () => {
                 />
               );
             })}
-          {shouldShowAll &&
+          {shouldShowAllGenres &&
             allGenres.map((genre) => {
               return (
                 <GenreSelect
@@ -35,19 +35,24 @@ export const SuggestionPage = () => {
                 />
               );
             })}
-          {!shouldShowAll && <div onClick={() => setShouldShowAll(true)}>Show all</div>}
+          {!shouldShowAllGenres && <div onClick={() => setShouldShowAllGenres(true)}>Show all</div>}
         </div>
         <label htmlFor="">From this Developer:</label>
         <div>
           <select
             name="developer"
+            key="developer"
             id="developer"
             value={selectedDev}
             onChange={(e) => setSelectedDev(e.target.value)}
           >
             <option value={"any"}>Any</option>
             {allDevelopers.map((developer) => {
-              return <option value={developer}>{developer}</option>;
+              return (
+                <option key={developer} value={developer}>
+                  {developer}
+                </option>
+              );
             })}
           </select>
         </div>
