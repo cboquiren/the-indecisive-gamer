@@ -7,6 +7,7 @@ import { Homepage } from "./Pages/home";
 import { SuggestionPage } from "./Pages/suggestion";
 import { Highlight } from "./Pages/highlight";
 import { Lobby } from "./Pages/lobby";
+import { UserPage } from "./Pages/user";
 
 function App() {
   return (
@@ -17,10 +18,11 @@ function App() {
             <Navbar />
             <div>
               <Routes>
-                <Route path="/" element={<Homepage />}></Route>
+                <Route path="home" element={<Homepage />}></Route>
                 <Route path="lobby" element={<Lobby />}></Route>
                 <Route path="suggestion" element={<SuggestionPage />}></Route>
                 <Route path="try-this" element={<Highlight />}></Route>
+                <Route path="userPage" element={<UserPage />}></Route>
               </Routes>
             </div>
           </GamesProvider>

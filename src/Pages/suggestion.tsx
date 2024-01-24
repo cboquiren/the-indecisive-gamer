@@ -35,7 +35,11 @@ export const SuggestionPage = () => {
                 />
               );
             })}
-          {!shouldShowAllGenres && <div onClick={() => setShouldShowAllGenres(true)}>Show all</div>}
+          {!shouldShowAllGenres && (
+            <button className="see-btn" onClick={() => setShouldShowAllGenres(true)}>
+              Show all
+            </button>
+          )}
         </div>
         <label htmlFor="">From this Developer:</label>
         <div>

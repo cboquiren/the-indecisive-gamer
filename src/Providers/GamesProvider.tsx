@@ -15,8 +15,6 @@ import { gamesRequests } from "../apiRequests/GamesApi";
 type TGamesContext = {
   allGamesRaw: TGame[];
   setAllGamesRaw: Dispatch<SetStateAction<TGame[]>>;
-  selectedGame: TGame;
-  setSelectedGame: Dispatch<SetStateAction<TGame>>;
   allGames: TGame[];
   userCategories: { [key: string]: number[] };
 };
@@ -25,7 +23,6 @@ const GamesContext = createContext<TGamesContext | undefined>(undefined);
 
 export const GamesProvider = ({ children }: { children: ReactNode }) => {
   const [allGamesRaw, setAllGamesRaw] = useState<TGame[]>([]);
-  const [selectedGame, setSelectedGame] = useState<TGame>({} as TGame);
 
   const { user } = useUser();
   const { userInteractions } = useInteractions();
@@ -71,13 +68,17 @@ export const GamesProvider = ({ children }: { children: ReactNode }) => {
     playedGamesArr: sortUserGamesByType("played"),
   };
 
+  const unHiddenGames = allGames.filter((game) => {
+    return !userCategories.hiddenGamesArr.includes(game.id);
+  });
+
+  console.log("unhiddenGames", unHiddenGames);
+
   return (
     <GamesContext.Provider
       value={{
         allGamesRaw,
         setAllGamesRaw,
-        selectedGame,
-        setSelectedGame,
         allGames,
         userCategories,
       }}
